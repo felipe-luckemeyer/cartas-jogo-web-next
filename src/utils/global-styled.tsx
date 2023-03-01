@@ -1,4 +1,7 @@
-* {
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,7 +9,7 @@
   }
   html {
     font-family: Cinzel;
-    background: #624C3C
+    background: ${(props) => props.theme.colors.marrom}
   }
 
 .fade-in {
@@ -56,3 +59,4 @@
     opacity: 1;
   }
 }
+`

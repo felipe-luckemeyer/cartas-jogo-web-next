@@ -1,4 +1,5 @@
 // import { GlobalStyle } from '@/utils/global-style'
+import { Cinzel_Decorative } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
 
@@ -7,17 +8,17 @@ export const metadata = {
   description: 'Um jogo de cartas',
 }
 
+const cinzelDecorative = Cinzel_Decorative({
+  weight: ['400', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
       {/* <GlobalStyle /> */}
-      <html lang="en">
-        <head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel:wght@400;500;600&family=IM+Fell+DW+Pica+SC&family=Marcellus+SC&display=swap"
-            rel="stylesheet"
-          />
-        </head>
+      <html lang="en" className={cinzelDecorative.className}>
         <body>{children}</body>
       </html>
     </>

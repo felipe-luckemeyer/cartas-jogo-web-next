@@ -1,11 +1,9 @@
 import Link from 'next/link'
-// import { GlobalStyle } from '../utils/global-styled'
 
 export default function Home() {
   return (
     <div>
-      {/* <GlobalStyle /> */}
-      <p>Home</p>
+      <h1 className="text-red-600">Home</h1>
       <Link href="/battle">Battle</Link>
       <Link href="/collection">Collection</Link>
     </div>

@@ -1,4 +1,3 @@
-// import { GlobalStyle } from '@/utils/global-style'
 import { Cinzel_Decorative } from 'next/font/google'
 import { ReactNode } from 'react'
 import './globals.css'
@@ -12,13 +11,13 @@ const cinzelDecorative = Cinzel_Decorative({
   weight: ['400', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-cinzel-decorative',
 })
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      {/* <GlobalStyle /> */}
-      <html lang="en" className={cinzelDecorative.className}>
+      <html lang="en" className={`${cinzelDecorative.variable} font-sans`}>
         <body>{children}</body>
       </html>
     </>

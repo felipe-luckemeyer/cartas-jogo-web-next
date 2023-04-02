@@ -3,9 +3,10 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div>
-      <p>Home</p>
+      <h1 className="text-3xl font-bold">Home</h1>
       <Link href="/battle">Battle</Link>
       <Link href="/collection">Collection</Link>
+      <div className="h-28 w-28 shadow-custom01"></div>
     </div>
   )
 }

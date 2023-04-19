@@ -15,11 +15,11 @@ export function HeroCard({ data }: CardInterface) {
   function getClanStyle() {
     switch (data.clan) {
       case 'strength':
-        return { icon: Icons.shield, color: 'yellow-900' }
+        return { icon: Icons.shield, bgColor: 'bg-yellow-900' }
       case 'fire':
-        return { icon: Icons.fire, color: 'amber-300' }
+        return { icon: Icons.fire, bgColor: 'bg-amber-300' }
       case 'magic':
-        return { icon: Icons.magic, color: 'purple-900' }
+        return { icon: Icons.magic, bgColor: 'bg-purple-900' }
       default:
         break
     }
@@ -28,7 +28,7 @@ export function HeroCard({ data }: CardInterface) {
 
   return (
     <div
-      className={`h-48 w-32 bg-${clanStyle?.color} p-1 rounded shadow-custom01`}
+      className={`h-48 w-32 ${clanStyle?.bgColor} p-1 rounded shadow-custom01`}
     >
       <div className="h-4 w-24 bg-white rounded-sm flex absolute mt-2 ml-5 pl-1 shadow-custom01">
         <label className="font-serif text-xs">{data.name}</label>

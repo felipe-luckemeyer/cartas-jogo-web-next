@@ -27,7 +27,7 @@ export function HeroCard({ data }: CardInterface) {
   const clanStyle = getClanStyle()
 
   return (
-    <div
+    <article
       className={`h-48 w-32 ${clanStyle?.bgColor} p-1 rounded shadow-custom01`}
     >
       <div className="h-4 w-24 bg-white rounded-sm flex absolute mt-2 ml-5 pl-1 shadow-custom01">
@@ -67,6 +67,6 @@ export function HeroCard({ data }: CardInterface) {
           {data.lifePoints}
         </label>
       </div>
-    </div>
+    </article>
   )
 }

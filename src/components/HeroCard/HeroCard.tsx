@@ -4,7 +4,7 @@ import Image from 'next/image'
 interface CardInterface {
   data: {
     name: string
-    clan: string
+    clan: string // 'strength' || 'fire' || 'magic'
     manaPoints: number
     attackPoints: number
     lifePoints: number
@@ -12,23 +12,16 @@ interface CardInterface {
 }
 
 export function HeroCard({ data }: CardInterface) {
-  function getClanStyle() {
-    switch (data.clan) {
-      case 'strength':
-        return { icon: Icons.shield, bgColor: 'bg-yellow-900' }
-      case 'fire':
-        return { icon: Icons.fire, bgColor: 'bg-amber-300' }
-      case 'magic':
-        return { icon: Icons.magic, bgColor: 'bg-purple-900' }
-      default:
-        break
-    }
+  const clanStyles = {
+    strength: { icon: Icons.shield, bgColor: 'bg-yellow-900' },
+    fire: { icon: Icons.fire, bgColor: 'bg-amber-300' },
+    magic: { icon: Icons.magic, bgColor: 'bg-purple-900' },
   }
-  const clanStyle = getClanStyle()
+  const clanStyleObjet = clanStyles[data.clan]
 
   return (
     <article
-      className={`h-48 w-32 ${clanStyle?.bgColor} p-1 rounded shadow-custom01`}
+      className={`h-48 w-32 ${clanStyleObjet?.bgColor} p-1 rounded shadow-custom01`}
     >
       <div className="h-4 w-24 bg-white rounded-sm flex absolute mt-2 ml-5 pl-1 shadow-custom01">
         <label className="font-serif text-xs">{data.name}</label>
@@ -51,7 +44,7 @@ export function HeroCard({ data }: CardInterface) {
         priority
       />
       <Image
-        src={clanStyle?.icon}
+        src={clanStyleObjet?.icon}
         alt="Texto alternativo"
         width={26}
         height={26}

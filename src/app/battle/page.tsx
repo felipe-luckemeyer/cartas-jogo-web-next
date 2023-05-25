@@ -34,7 +34,7 @@ const data = [
 
 export default function Battle() {
   return (
-    <div>
+    <>
       <p>Battle</p>
       <Link href={'/'}>Back</Link>
       <section className="h-28 mt-28 flex justify-center border-2 border-orange-200 bg-orange-100 rounded-sm shadow-custom01">
@@ -47,6 +47,6 @@ export default function Battle() {
           </div>
         ))}
       </section>
-    </div>
+    </>
   )
 }
